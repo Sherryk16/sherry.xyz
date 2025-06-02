@@ -1,0 +1,10 @@
+[
+  {
+    "title": "My First Post",
+    "slug": "my-first-post",
+    "summary": "This is a summary.",
+    "date": "2024-01-01",
+    "tags": ["tag1", "tag2"],
+    "draft": false
+  }
+]
