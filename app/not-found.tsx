@@ -8,10 +8,6 @@ import { cn } from '@/lib/utils'
 import { buttonVariants, Button } from '@/components/ui/button'
 import SiteLogo from '@/components/SiteLogos'
 
-export const metadata = {
-  title: 'Page Not Found',
-}
-
 export default function NotFound() {
   return (
     <>
