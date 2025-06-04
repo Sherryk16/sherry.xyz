@@ -8,17 +8,24 @@ import { cn } from '@/lib/utils'
 import { buttonVariants, Button } from '@/components/ui/button'
 import SiteLogo from '@/components/SiteLogos'
 
+// ❌ metadata removed for Vercel compatibility
+
 export default function NotFound() {
   return (
     <>
-      <Header session={null} />
+      <Header session={null} /> {/* safe static rendering */}
       <main className="mb-auto pt-32">
         <div className="mb-auto flex flex-col content-center space-y-10">
           <div className="mx-auto mt-5">
             <SiteLogo kind={'logo'} size={15} logoType="image" parentClassName={'mx-auto'} />
           </div>
-          <Image src={GIF} alt="Page Not Found GIF Wink" className="mx-auto mt-16 " />
-          <p className="mx-auto mb-4 text-xl font-bold leading-normal md:text-2xl">
+          <Image
+            src={GIF}
+            alt="Page Not Found GIF Wink"
+            className="mx-auto mt-16 w-[300px] h-auto"
+            priority
+          />
+          <p className="mx-auto mb-4 text-xl font-bold leading-normal md:text-2xl text-center">
             Lost your way?
           </p>
           <Button asChild className={cn(buttonVariants({ variant: 'secondary' }), 'mx-auto')}>
