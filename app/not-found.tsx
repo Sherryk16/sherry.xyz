@@ -9,13 +9,15 @@ import { buttonVariants, Button } from '@/components/ui/button'
 import SiteLogo from '@/components/SiteLogos'
 
 import { genPageMetadata } from 'app/seo'
-export const metadata = genPageMetadata({ title: 'Check Google Maps!' })
 
-// ❌ No async, no auth
+export async function generateMetadata() {
+  return genPageMetadata({ title: 'Check Google Maps!' })
+}
+
 export default function NotFound() {
   return (
     <>
-      <Header session={null} /> {/* optional: safely render without session */}
+      <Header session={null} />
       <main className="mb-auto pt-32">
         <div className="mb-auto flex flex-col content-center space-y-10">
           <div className="mx-auto mt-5">
