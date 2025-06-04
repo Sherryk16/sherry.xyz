@@ -1,40 +1,36 @@
-import { MDXLayoutRenderer } from 'pliny/mdx-components'
-import AuthorLayout from '@/layouts/AuthorLayout'
-import { genPageMetadata } from 'app/seo'
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import { MDXRemote } from 'next-mdx-remote/rsc'
 import SectionContainer from '@/components/SectionContainer'
+import AuthorLayout from '@/layouts/AuthorLayout'
+import Twemoji from '@/components/Twemoji'
 
-// Replace with your static metadata
-export const metadata = genPageMetadata({ title: 'About' })
+export default async function AboutPage() {
+  const mdxPath = path.join(process.cwd(), 'data', 'authors', 'default.mdx')
+  const rawMDX = fs.readFileSync(mdxPath, 'utf-8')
+  const { data, content } = matter(rawMDX)
 
-// Static author data instead of allAuthors from Contentlayer
-const author = {
-  name: 'Default Author',
-  slug: 'default',
-  avatar: '/images/avatar.jpg',
-  occupation: 'Developer',
-  company: 'Your Company',
-  email: 'author@example.com',
-  twitter: 'https://twitter.com/yourhandle',
-  linkedin: 'https://linkedin.com/in/yourprofile',
-  github: 'https://github.com/yourgithub',
-  body: {
-    code: `
-      # About Me
-      
-      This is a sample about page written in MDX format.
-      You can customize this content however you want.
-    `,
-  },
-}
-
-export default function Page() {
-  // coreContent is gone, so pass author.body.code directly
-  // You may want to parse MDX string if necessary, but pliny/mdx-components can handle code string directly.
+  const author = {
+    name: data.name,
+    avatar: data.avatar,
+    occupation: data.occupation,
+    company: data.company,
+    email: data.email,
+    instagram: data.instagram,
+    linkedin: data.linkedin,
+    github: data.github,
+    body: {
+      code: content,
+    },
+  }
 
   return (
     <SectionContainer>
       <AuthorLayout content={author}>
-        <MDXLayoutRenderer code={author.body.code} />
+        <article className="prose max-w-none dark:prose-invert">
+          <MDXRemote source={author.body.code} components={{ Twemoji }} />
+        </article>
       </AuthorLayout>
     </SectionContainer>
   )
