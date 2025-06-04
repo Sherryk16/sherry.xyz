@@ -1,37 +1,25 @@
-// app/not-found.tsx
-import Link from '@/components/Link'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 import Image from 'next/image'
+import Link from 'next/link'
+import { Metadata } from 'next'
+
 import GIF from '@/public/static/gifs/confused-travolta.gif'
-import { cn } from '@/lib/utils'
-import { buttonVariants, Button } from '@/components/ui/button'
-import SiteLogo from '@/components/SiteLogos'
+
+export const metadata: Metadata = {
+  title: 'Page Not Found',
+  description: 'The page you are looking for does not exist.',
+}
 
 export default function NotFound() {
   return (
-    <>
-      <Header session={null} />
-      <main className="mb-auto pt-32">
-        <div className="mb-auto flex flex-col content-center space-y-10">
-          <div className="mx-auto mt-5">
-            <SiteLogo kind="logo" size={15} logoType="image" parentClassName="mx-auto" />
-          </div>
-          <Image
-            src={GIF}
-            alt="Page Not Found GIF Wink"
-            className="mx-auto mt-16 h-auto w-[300px]"
-            priority
-          />
-          <p className="mx-auto mb-4 text-center text-xl font-bold leading-normal md:text-2xl">
-            Lost your way?
-          </p>
-          <Button asChild className={cn(buttonVariants({ variant: 'secondary' }), 'mx-auto')}>
-            <Link href="/">Back to homepage</Link>
-          </Button>
-        </div>
-      </main>
-      <Footer />
-    </>
+    <div className="flex min-h-screen flex-col items-center justify-center space-y-6 bg-white px-4 py-16 text-center">
+      <Image src={GIF} alt="Lost?" width={300} height={200} className="h-auto w-[300px]" />
+      <h1 className="text-xl font-bold leading-normal md:text-2xl">Lost your way?</h1>
+      <Link
+        href="/"
+        className="rounded-lg bg-black px-4 py-2 text-white transition hover:opacity-80"
+      >
+        Back to Home
+      </Link>
+    </div>
   )
 }
