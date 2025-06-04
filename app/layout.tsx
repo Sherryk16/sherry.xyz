@@ -81,20 +81,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
 
-      <body
-        className={cn(
-          'min-h-screen bg-background font-sans antialiased',
-          fontSans.variable
-        )}
-      >
+      <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
         <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <VercelAnalytics />
           <JotaiProvider>
             <TooltipProvider delayDuration={500}>
-              <div className="flex h-screen flex-col justify-between font-sans">
-                {children}
-              </div>
+              <div className="flex h-screen flex-col justify-between font-sans">{children}</div>
             </TooltipProvider>
             <Toaster />
           </JotaiProvider>

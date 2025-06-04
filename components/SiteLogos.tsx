@@ -35,9 +35,7 @@ const SiteLogo = ({
   const pxWidth = size ? size * 4 : 0
   const pxHeight = size ? size * 4 : 0
 
-  
-  const dynamicLogoSrc =
-    resolvedTheme === 'dark' ? '/final.png' : '/dark.png'
+  const dynamicLogoSrc = resolvedTheme === 'dark' ? '/final.png' : '/dark.png'
 
   const logoMap = {
     logo: dynamicLogoSrc,
