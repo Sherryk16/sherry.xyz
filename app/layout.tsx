@@ -1,14 +1,10 @@
 import '@/css/globals.css'
 import '@/css/tailwind.css'
 import '@/css/twemoji.css'
-
-// import 'pliny/search/algolia.css'
 import 'remark-github-blockquote-alert/alert.css'
 
 import { Montserrat as FontSans } from 'next/font/google'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
-// import Header from '@/components/Header'
-// import Footer from '@/components/Footer'
 import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from '@/components/providers/theme-providers'
 import { Metadata } from 'next'
@@ -18,7 +14,6 @@ import { Toaster } from '@/components/ui/toaster'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import VercelAnalytics from '@/components/Analytics'
 import { TailwindIndicator } from '@/components/TailwindIndicator'
-// import { Session } from 'next-auth'
 import { auth } from '@/auth'
 
 const fontSans = FontSans({
@@ -72,23 +67,23 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html
       lang={siteMetadata.language}
-      // className={`scroll-smooth scrollbar-none	`}
-      className={`overflow-x-hidden scroll-smooth scrollbar-thin scrollbar-track-slate-400 scrollbar-thumb-slate-700	`}
+      className="overflow-x-hidden scroll-smooth scrollbar-thin scrollbar-track-slate-400 scrollbar-thumb-slate-700"
       suppressHydrationWarning
     >
-      <link rel="apple-touch-icon" sizes="76x76" href="/static/favicons/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png" />
+      {/* Favicon using final.png */}
+      <link rel="icon" type="image/png" href="/final.png" />
+
+      {/* Optional apple and manifest metadata */}
+      <link rel="apple-touch-icon" sizes="180x180" href="/final.png" />
       <link rel="manifest" href="/static/favicons/site.webmanifest" />
-      {/* <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#5bbad5" /> */}
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased',
-          // 'bg-background min-h-screen pl-[calc(100vw-100%)] font-sans antialiased',
           fontSans.variable
         )}
       >
@@ -98,13 +93,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <JotaiProvider>
             <TooltipProvider delayDuration={500}>
               <div className="flex h-screen flex-col justify-between font-sans">
-                {/* <SearchProvider searchConfig={siteMetadata.search as SearchConfig}> */}
-                {/* <Header session={session} /> */}
-                {/* <main className="mb-auto pt-20"> */}
                 {children}
-                {/* </main> */}
-                {/* <Footer /> */}
-                {/* </SearchProvider> */}
               </div>
             </TooltipProvider>
             <Toaster />

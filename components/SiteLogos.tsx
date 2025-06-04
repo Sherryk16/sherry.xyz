@@ -1,8 +1,11 @@
+'use client'
+
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import siteMetadata from '@/data/siteMetadata'
 import { Button } from '@/components/ui/button'
+import { useTheme } from 'next-themes'
 
 type SiteLogoProps = {
   kind: 'logo' | 'darklogo' | 'tlogolight' | 'tlogodark' | 'tlogogrey'
@@ -27,18 +30,24 @@ const SiteLogo = ({
   target = '_self',
   variant,
 }: SiteLogoProps) => {
+  const { resolvedTheme } = useTheme()
+
   const pxWidth = size ? size * 4 : 0
   const pxHeight = size ? size * 4 : 0
 
+  
+  const dynamicLogoSrc =
+    resolvedTheme === 'dark' ? '/final.png' : '/dark.png'
+
   const logoMap = {
-    logo: '/static/site/logo.svg',
-    darklogo: '/static/site/logo-d.svg',
-    tlogolight: '/static/site/logo-tw.svg',
-    tlogodark: '/static/site/logo-tb.svg',
-    tlogogrey: '/static/site/logo-tg.svg',
+    logo: dynamicLogoSrc,
+    darklogo: '/dark.png',
+    tlogolight: '/final.png',
+    tlogodark: '/dark.png',
+    tlogogrey: '/dark.png',
   }
 
-  const imagePath = logoMap[kind] || '/logo.svg'
+  const imagePath = logoMap[kind] || '/dark.png'
 
   if (logoType === 'button') {
     return (
@@ -52,11 +61,11 @@ const SiteLogo = ({
           <div className="flex items-center justify-between">
             <Image
               src={imagePath}
-              alt={'Sherry'}
-              width={`${pxWidth}`}
-              height={`${pxHeight}`}
-              title={'Sheharyar Khan'}
-              priority={true} // {false} | {true}
+              alt="Sherry"
+              width={pxWidth}
+              height={pxHeight}
+              title="Sheharyar Khan"
+              priority
               className={cn('drop-shadow-lg filter', className)}
             />
           </div>
@@ -76,30 +85,33 @@ const SiteLogo = ({
         <div className="flex items-center justify-between">
           <Image
             src={imagePath}
-            alt={'sherry'}
-            width={`${pxWidth}`}
-            height={`${pxHeight}`}
-            title={'Sheharyar Khan'}
-            priority={true} // {false} | {true}
+            alt="Sherry"
+            width={pxWidth}
+            height={pxHeight}
+            title="Sheharyar Khan"
+            priority
             className={cn('drop-shadow-lg filter', className)}
           />
         </div>
       </Link>
     )
   }
+
   if (logoType === 'image') {
     return (
       <Image
         src={imagePath}
-        alt={'Sheharyar'}
-        width={`${pxWidth}`}
-        height={`${pxHeight}`}
-        title={'Sheharyar Khan'}
-        priority={true} // {false} | {true}
+        alt="Sheharyar"
+        width={pxWidth}
+        height={pxHeight}
+        title="Sheharyar Khan"
+        priority
         className={cn('drop-shadow-lg filter', className)}
       />
     )
   }
+
+  return null
 }
 
 export default SiteLogo
