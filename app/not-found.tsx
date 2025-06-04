@@ -8,10 +8,8 @@ import { cn } from '@/lib/utils'
 import { buttonVariants, Button } from '@/components/ui/button'
 import SiteLogo from '@/components/SiteLogos'
 
-import { genPageMetadata } from 'app/seo'
-
-export async function generateMetadata() {
-  return genPageMetadata({ title: 'Check Google Maps!' })
+export const metadata = {
+  title: 'Page Not Found',
 }
 
 export default function NotFound() {
