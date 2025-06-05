@@ -47,6 +47,7 @@ export default async function NotFound() {
           </Button>
         </div>
       </main>
+
       <Footer />
     </>
   )
