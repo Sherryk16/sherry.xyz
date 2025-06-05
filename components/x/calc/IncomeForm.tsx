@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils'
 import { Calendar } from '@/components/ui/calendar'
 import { LuCalendarDays } from 'react-icons/lu'
 import * as React from 'react'
-import { LuLoader2 } from 'react-icons/lu'
+import { LuLoader } from 'react-icons/lu'
 import { getSalaryDict } from '@/components/x/calc/CalFunctions'
 import { Badge } from '@/components/ui/badge'
 
@@ -236,7 +236,7 @@ export function IncomeForm() {
           variant={'outline'}
           className="sm:mx-auto sm:w-56"
         >
-          {isLoading && <LuLoader2 className="mr-2 h-4 w-4 animate-spin" />}
+          {isLoading && <LuLoader className="mr-2 h-4 w-4 animate-spin" />}
           Submit
         </Button>
       </form>

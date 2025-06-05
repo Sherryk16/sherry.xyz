@@ -3,7 +3,7 @@
 import siteMetadata from '@/data/siteMetadata'
 // import { formatDate } from 'pliny/utils/formatDate'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
-import { LuLoader2 } from 'react-icons/lu'
+import { LuLoader } from 'react-icons/lu'
 
 import { Suspense } from 'react'
 //import TopTracks from '@/components/spotify/TopTracks'
@@ -19,7 +19,7 @@ export default function Home({ posts }) {
   return (
     <>
       <div className="">
-        <Suspense fallback={<LuLoader2 className="mx-auto my-10 h-4 w-4 animate-spin" />}>
+        <Suspense fallback={<LuLoader className="mx-auto my-10 h-4 w-4 animate-spin" />}>
           <Hero />
         </Suspense>
 
@@ -32,13 +32,13 @@ export default function Home({ posts }) {
         </SectionContainer>
         <SectionContainer>
           <Separator />
-          <Suspense fallback={<LuLoader2 className="mx-auto my-10 h-4 w-4 animate-spin" />}>
+          <Suspense fallback={<LuLoader className="mx-auto my-10 h-4 w-4 animate-spin" />}>
             <GithubCal />
           </Suspense>
         </SectionContainer>
         <SectionContainer>
           <Separator />
-          <Suspense fallback={<LuLoader2 className="mx-auto my-10 h-4 w-4 animate-spin" />}>
+          <Suspense fallback={<LuLoader className="mx-auto my-10 h-4 w-4 animate-spin" />}>
             <RecentPosts posts={posts} />
           </Suspense>
         </SectionContainer>

@@ -38,7 +38,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { useToast } from '@/components/ui/use-toast'
 import { LuSettings2 as SettingsIcon } from 'react-icons/lu'
-import { LuLoader2 } from 'react-icons/lu'
+import { LuLoader } from 'react-icons/lu'
 import { useAtom } from 'jotai'
 import { salarySettingsAtom } from '@/components/atoms/toolsAtoms' // Import the atom
 
@@ -178,7 +178,7 @@ function SettingsForm({
           variant={'outline'}
           className="sm:mx-auto sm:w-56"
         >
-          {isLoading && <LuLoader2 className="me-2 h-4 w-4 animate-spin" />}
+          {isLoading && <LuLoader className="me-2 h-4 w-4 animate-spin" />}
           Save changes
         </Button>
       </form>

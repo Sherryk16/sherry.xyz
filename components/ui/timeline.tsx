@@ -46,8 +46,8 @@ export const Timeline = ({
             ? activeItem === -1
               ? false
               : activeItem >= index
-            : item.isActiveBullet ?? false
-        const isLastItem = mode === 'timeline' ? index === items.length - 1 : item.isLast ?? false
+            : (item.isActiveBullet ?? false)
+        const isLastItem = mode === 'timeline' ? index === items.length - 1 : (item.isLast ?? false)
         return (
           <TimelineItem
             key={index}

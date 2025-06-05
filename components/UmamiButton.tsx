@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import siteMetadata from '@/data/siteMetadata'
 import { useEffect, useState } from 'react'
-import { LuLineChart } from 'react-icons/lu'
+import { LineChart } from 'lucide-react'
 
 const AnalyticsButton = () => {
   const [mounted, setMounted] = useState(false)
@@ -29,7 +29,7 @@ const AnalyticsButton = () => {
           }}
           whileHover={{ scale: 1.2 }}
         >
-          <LuLineChart className="h-5 w-5" />
+          <LineChart className="h-5 w-5" />
           <span className="sr-only">{'Umami Analytics'}</span>
         </motion.div>
       </a>

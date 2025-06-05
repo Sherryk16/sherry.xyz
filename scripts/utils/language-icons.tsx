@@ -2,7 +2,7 @@ import { IconType } from 'react-icons/lib'
 import {
   SiC,
   SiCplusplus,
-  SiCsharp,
+  SiSharp,
   SiCss3,
   SiHtml5,
   SiJavascript,
@@ -21,7 +21,7 @@ export const languageIcons: { [key: string]: IconType } = {
   python: SiPython,
   c: SiC,
   'c++': SiCplusplus,
-  cs: SiCsharp,
+  cs: SiSharp,
   typescript: SiTypescript,
   markdown: SiMarkdown,
   mdx: SiMdx,

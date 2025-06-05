@@ -1,6 +1,6 @@
-import { LuAlertCircle as AlertCircle } from 'react-icons/lu'
+import { LuTriangle as AlertCircle } from 'react-icons/lu'
 import { LuBook as Book } from 'react-icons/lu'
-import { LuCheckCircle2 as CheckCircle2 } from 'react-icons/lu'
+import { LuCheck as CheckCircle2 } from 'react-icons/lu'
 import { LuFlag as Flag } from 'react-icons/lu'
 import { LuInfo as Info } from 'react-icons/lu'
 
@@ -49,7 +49,6 @@ const Box = ({ text, type = 'default' }) => {
       <ReactMarkdown
         components={{ p: Fragment }}
         remarkPlugins={[remarkMath]}
-        // @ts-ignore
         rehypePlugins={[rehypeKatex, rehypeRaw]}
         skipHtml={false}
       >
