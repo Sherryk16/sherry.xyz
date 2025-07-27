@@ -117,7 +117,6 @@ export const projectsData: Project[] = [
     title: 'Hekto',
     imgSrc: '/static/images/projects/freind.png',
     builtWith: ['Next.js', 'Tailwind', 'Typescript', 'Supabase'],
-    
     repo: 'Hekto',
     url: 'https://freindship-test.vercel.app/',
   },
