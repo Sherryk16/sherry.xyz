@@ -13,7 +13,7 @@ export const metadata = genPageMetadata({ title: 'Check Google Maps!' })
 export default function NotFound() {
   return (
     <>
-      <Header />
+      <Header session={null} />
       <main className="mb-auto pt-32">
         <div className="mb-auto flex flex-col content-center space-y-10">
           <div className="mx-auto mt-5">
@@ -28,7 +28,6 @@ export default function NotFound() {
           </Button>
         </div>
       </main>
-
       <Footer />
     </>
   )
