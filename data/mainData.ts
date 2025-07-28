@@ -90,9 +90,17 @@ export const projectsData: Project[] = [
     type: 'self',
     title: 'Personal website',
     imgSrc: '/static/images/projects/portfolio2.PNG',
-    repo: 'andrewsam.xyz',
-    url: 'https://sherry.xyz',
+    repo: 'Sherryk16',
+    url: 'https://sherry-xyz.vercel.app/',
     builtWith: ['Next.js', 'Tailwind', 'Typescript', 'Prisma', 'Umami'],
+  },
+  {
+    type: 'self',
+    title: 'Sherryz Ecommerce Store',
+    imgSrc: '/static/images/projects/sherryz.png',
+    repo: 'Sherryk16',
+    url: 'https://sherryz-model-store.vercel.app/',
+    builtWith: ['Next.js', 'Tailwind', 'Typescript', 'Supabase', 'PostgreSQL'],
   },
   {
     type: 'self',
@@ -103,6 +111,14 @@ export const projectsData: Project[] = [
       'I developed a fully functional e-commerce website inspired by Hekto, using Next.js for the frontend, Sanity as the headless CMS, and Clerk for user authentication and management. The site features product listings, dynamic pages, user sign-up/login, and a smooth shopping experience. This project showcases my ability to integrate modern tools and build scalable, secure web applications with a focus on usability and performance.',
     repo: 'Hekto',
     url: 'https://market-place-builder-new-app.vercel.app/',
+  },
+  {
+    type: 'self',
+    title: 'Hekto',
+    imgSrc: '/static/images/projects/freind.png',
+    builtWith: ['Next.js', 'Tailwind', 'Typescript', 'Supabase'],
+    repo: 'Hekto',
+    url: 'https://freindship-test.vercel.app/',
   },
 ]
 
